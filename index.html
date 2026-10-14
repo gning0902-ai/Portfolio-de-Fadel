@@ -1,705 +1,302 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Fadel - Développeur Frontend</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-<script defer src="js/main.js"></script>
+  <title>Mohamed Fadel Gning — Développement web, support IT et réseaux</title>
+  <meta name="description" content="Portfolio de Mohamed Fadel Gning, étudiant en Génie Informatique à Dakar : développement web, support informatique et réseaux. Projets Solu Buur, DigiSchool et Karang Couture.">
+  <meta name="theme-color" content="#101b2d">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mohamed Fadel Gning — Développement web, support IT et réseaux">
+  <meta property="og:description" content="Étudiant en Génie Informatique à Dakar. Découvrez mes projets : Solu Buur, DigiSchool et Karang Couture.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23101b2d'/%3E%3Ctext x='32' y='43' font-family='Arial' font-size='28' font-weight='700' text-anchor='middle' fill='%23f5b700'%3EMG%3C/text%3E%3C/svg%3E">
 
-  <script src="https://cdn.tailwindcss.com"></script>
- 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-black text-white overflow-x-hidden">
+<body>
+  <a class="skip-link" href="#projets">Aller aux projets</a>
 
-  <!-- Floating Blobs Background -->
-  <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div class="blob absolute top-20 left-10 w-96 h-96 bg-blue-950 animate-float"></div>
-    <div class="blob absolute bottom-20 right-10 w-80 h-80 bg-blue-900 animate-float" style="animation-delay: 2s;"></div>
-    <div class="blob absolute top-1/2 left-1/2 w-72 h-72 bg-indigo-950 animate-float" style="animation-delay: 4s;"></div>
-  </div>
-
-  <!-- NAVIGATION BAR -->
-  <header class="fixed w-full top-0 z-50 glass border-b border-blue-900/30">
-    <nav class="max-w-7xl mx-auto px-6 py-4">
-      <div class="flex justify-between items-center">
-        <a href="#hero" class="flex items-center gap-3 group">
-          <div class="relative">
-            <div class="absolute inset-0 bg-blue-900 rounded-full blur-lg opacity-70 group-hover:opacity-100 transition-opacity"></div>
-            <div class="relative w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full overflow-hidden border-2 border-blue-500 transform group-hover:scale-110 transition-transform">
-              <!-- Ajoutez votre photo ici - remplacez photo.jpg par le nom de votre fichier -->
-              <img src="photo.jpg" alt="Fadel" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="w-full h-full flex items-center justify-center font-bold text-2xl" style="display:none;">F</div>
-            </div>
-          </div>
-          <span class="font-bold text-2xl hidden sm:block">Fadel<span class="text-blue-400">.</span></span>
-        </a>
-
-        <ul class="hidden md:flex items-center gap-8">
-          <li><a href="#hero" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Accueil</a></li>
-          <li><a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">À propos</a></li>
-          <li><a href="#skills" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Compétences</a></li>
-          <li><a href="#formation" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Formation</a></li>
-          <li><a href="#experience" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Expérience</a></li>
-          <li><a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition-colors font-medium">Projets</a></li>
-          <li>
-            <a href="#contact" class="px-6 py-2.5 bg-blue-900 hover:bg-blue-800 rounded-full font-semibold transition-all shadow-lg shadow-blue-900/30">
-              Contact
-            </a>
-          </li>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="#top">
+        <img class="brand__avatar" src="assets/img/avatar.jpg" width="160" height="160" alt="">
+        <span>Mohamed Fadel Gning</span>
+      </a>
+      <nav aria-label="Navigation principale">
+        <ul class="nav-list">
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <button id="menu-btn" class="md:hidden text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-
-      <div id="mobile-menu" class="hidden md:hidden pt-4">
-        <ul class="space-y-3">
-          <li><a href="#hero" class="block py-2 hover:text-blue-400 transition-colors">Accueil</a></li>
-          <li><a href="#about" class="block py-2 hover:text-blue-400 transition-colors">À propos</a></li>
-          <li><a href="#skills" class="block py-2 hover:text-blue-400 transition-colors">Compétences</a></li>
-          <li><a href="#formation" class="block py-2 hover:text-blue-400 transition-colors">Formation</a></li>
-          <li><a href="#experience" class="block py-2 hover:text-blue-400 transition-colors">Expérience</a></li>
-          <li><a href="#projects" class="block py-2 hover:text-blue-400 transition-colors">Projets</a></li>
-          <li><a href="#contact" class="block py-2 hover:text-blue-400 transition-colors">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <!-- HERO SECTION WITH BACKGROUND IMAGE -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center px-6 pt-20" style="background: linear-gradient(135deg, #000000 0%, #1e3a8a 100%); background-image: url('hero-bg.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-    <!-- Overlay - Increased opacity for better text readability -->
-    <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(30, 58, 138, 0.88) 100%);"></div>
-    
-    <div class="max-w-5xl mx-auto text-center relative z-10">
-      <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 glass rounded-full border border-blue-900/30 animate-fadeInUp">
-        <div class="w-2 h-2 bg-blue-400 rounded-full animate-glow"></div>
-        <span class="text-sm font-medium">Disponible pour des projets</span>
-      </div>
+  <main id="top">
 
-      <h1 class="font-bold text-6xl md:text-8xl lg:text-9xl mb-6 leading-tight animate-fadeInUp" style="animation-delay: 0.2s;">
-        <span class="block">Salut, je suis</span>
-        <span class="text-gradient block">Fadel</span>
-      </h1>
-
-      <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 font-light mb-12 max-w-3xl mx-auto animate-fadeInUp" style="animation-delay: 0.4s;">
-        Développeur Frontend passionné qui crée des 
-        <span class="text-blue-400 font-semibold">expériences digitales</span> 
-        exceptionnelles et mémorables
-      </p>
-
-      <div class="flex flex-wrap items-center justify-center gap-4 mb-16 animate-fadeInUp" style="animation-delay: 0.6s;">
-        <a href="#projects" class="group relative px-8 py-4 bg-blue-900 hover:bg-blue-800 rounded-2xl font-semibold text-lg shadow-2xl shadow-blue-900/30 hover:shadow-blue-800/50 transition-all hover:scale-105">
-          <span class="flex items-center gap-2">
-            <i class="fas fa-rocket"></i>
-            Voir mes projets
-          </span>
-        </a>
-        
-        <a href="cv.pdf" download class="px-8 py-4 glass border-2 border-blue-900/50 rounded-2xl font-semibold text-lg hover:bg-blue-900/10 hover:border-blue-800 transition-all flex items-center gap-2">
-          <i class="fas fa-download"></i>
-          Télécharger mon CV
-        </a>
-        
-        <a href="#contact" class="px-8 py-4 glass border-2 border-blue-900/50 rounded-2xl font-semibold text-lg hover:bg-blue-900/10 hover:border-blue-800 transition-all flex items-center gap-2">
-          <i class="fas fa-envelope"></i>
-          Me contacter
-        </a>
-      </div>
-
-      <div class="flex items-center justify-center gap-4 animate-fadeInUp" style="animation-delay: 0.8s;">
-        <a href="#" class="w-14 h-14 glass hover:bg-blue-900/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 border border-blue-900/30">
-          <i class="fab fa-github text-xl"></i>
-        </a>
-        <a href="#" class="w-14 h-14 glass hover:bg-blue-900/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 border border-blue-900/30">
-          <i class="fab fa-linkedin text-xl"></i>
-        </a>
-        <a href="#" class="w-14 h-14 glass hover:bg-blue-900/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 border border-blue-900/30">
-          <i class="fab fa-twitter text-xl"></i>
-        </a>
-      </div>
-
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <a href="#about" class="flex flex-col items-center gap-2 text-gray-400 hover:text-blue-400 transition-colors">
-          <span class="text-sm">Défiler</span>
-          <i class="fas fa-chevron-down text-xl"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT SECTION - CENTERED -->
-  <section id="about" class="relative py-32 px-6 bg-gradient-to-b from-black to-gray-900">
-    <div class="max-w-4xl mx-auto text-center">
-      <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-        À PROPOS
-      </span>
-      <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-        Créer des interfaces
-        <span class="text-gradient block">mémorables</span>
-      </h2>
-
-      <div class="space-y-6 text-gray-300 text-lg leading-relaxed mb-12">
-        <p>
-          Étudiant en développement web avec une <strong class="text-white">passion dévorante</strong> pour le design moderne et les interfaces utilisateur exceptionnelles.
-        </p>
-        <p>
-          J'utilise <span class="text-blue-400 font-semibold">HTML, Tailwind CSS et JavaScript</span> pour donner vie à des expériences web qui allient esthétique et performance.
-        </p>
-        <p>
-          Mon objectif ? Créer des interfaces qui non seulement <span class="text-blue-400 font-semibold">captivent visuellement</span>, mais offrent aussi une expérience utilisateur fluide et intuitive.
-        </p>
-      </div>
-
-      <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
-        <div class="glass border border-blue-900/30 rounded-2xl p-6 hover-scale">
-          <div class="text-4xl font-bold text-gradient">3+</div>
-          <div class="text-sm text-gray-400 mt-1">Projets</div>
-        </div>
-        <div class="glass border border-blue-900/30 rounded-2xl p-6 hover-scale">
-          <div class="text-4xl font-bold text-gradient">3+</div>
-          <div class="text-sm text-gray-400 mt-1">Années</div>
-        </div>
-        <div class="glass border border-blue-900/30 rounded-2xl p-6 hover-scale">
-          <div class="text-4xl font-bold text-gradient">∞</div>
-          <div class="text-sm text-gray-400 mt-1">Passion</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION - WITH TEXT LEVELS -->
-  <section id="skills" class="relative py-32 px-6 bg-gray-900">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-          COMPÉTENCES
-        </span>
-        <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl mb-6">
-          Mon <span class="text-gradient">expertise</span>
-        </h2>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-          Technologies et outils que je maîtrise pour créer des expériences exceptionnelles
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
-        <!-- HTML -->
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform">
-              <i class="fab fa-html5 text-3xl"></i>
-            </div>
-            <h3 class="font-bold text-2xl mb-3">HTML5</h3>
-            <p class="text-gray-400 mb-6">Structure web</p>
-            <span class="inline-block px-4 py-2 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">
-              Professionnel
-            </span>
-          </div>
-        </div>
-
-        <!-- Tailwind -->
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform">
-              <i class="fas fa-wind text-3xl"></i>
-            </div>
-            <h3 class="font-bold text-2xl mb-3">Tailwind</h3>
-            <p class="text-gray-400 mb-6">CSS moderne</p>
-            <span class="inline-block px-4 py-2 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">
-              Professionnel
-            </span>
-          </div>
-        </div>
-
-        <!-- JavaScript -->
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform">
-              <i class="fab fa-js text-3xl text-gray-900"></i>
-            </div>
-            <h3 class="font-bold text-2xl mb-3">JavaScript</h3>
-            <p class="text-gray-400 mb-6">Interactivité</p>
-            <span class="inline-block px-4 py-2 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">
-               Professionnel
-            </span>
-          </div>
-        </div>
-
-        <!-- React -->
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform">
-              <i class="fab fa-react text-3xl"></i>
-            </div>
-            <h3 class="font-bold text-2xl mb-3">React</h3>
-            <p class="text-gray-400 mb-6">Framework JS</p>
-            <span class="inline-block px-4 py-2 bg-blue-900/30 text-blue-400 rounded-full text-xs font-semibold">
-              Intermédiaire
-            </span>
-          </div>
-        </div>
-
-        <!-- Git -->
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8">
-            <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 transform group-hover:rotate-12 transition-transform">
-              <i class="fab fa-git-alt text-3xl"></i>
-            </div>
-            <h3 class="font-bold text-2xl mb-3">Git</h3>
-            <p class="text-gray-400 mb-6">Versioning</p>
-            <span class="inline-block px-4 py-2 bg-green-900/30 text-green-400 rounded-full text-xs font-semibold">
-               Professionnel
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap justify-center gap-3">
-        <span class="glass border border-blue-900/30 px-6 py-3 rounded-full font-medium hover:bg-blue-900/10 hover:border-blue-800/50 transition-all cursor-pointer">
-          Responsive Design
-        </span>
-        <span class="glass border border-blue-900/30 px-6 py-3 rounded-full font-medium hover:bg-blue-900/10 hover:border-blue-800/50 transition-all cursor-pointer">
-          UI/UX Design
-        </span>
-        <span class="glass border border-blue-900/30 px-6 py-3 rounded-full font-medium hover:bg-blue-900/10 hover:border-blue-800/50 transition-all cursor-pointer">
-          API REST
-        </span>
-        <span class="glass border border-blue-900/30 px-6 py-3 rounded-full font-medium hover:bg-blue-900/10 hover:border-blue-800/50 transition-all cursor-pointer">
-          Performance Web
-        </span>
-        <span class="glass border border-blue-900/30 px-6 py-3 rounded-full font-medium hover:bg-blue-900/10 hover:border-blue-800/50 transition-all cursor-pointer">
-          Figma
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- FORMATION SECTION -->
-  <section id="formation" class="relative py-32 px-6 bg-black">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-          FORMATION
-        </span>
-        <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl">
-          Mon <span class="text-gradient">parcours académique</span>
-        </h2>
-      </div>
-
-      <div class="space-y-6">
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Licence Informatique</h4>
-              <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm font-semibold">
-                2023 – 2026
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">UNIPRO - Dakar</p>
-            <p class="text-gray-300 leading-relaxed">
-              Formation complète en développement web, programmation orientée objet, bases de données et algorithmique.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Dev Web</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">POO</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">BDD</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Algorithmes</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Baccalauréat Litéraire</h4>
-              <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm font-semibold">
-                2022
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">Lycée de Diamniadio - Dakar</p>
-            <p class="text-gray-300 leading-relaxed">
-              Baccalauréat série L2 avec mention. 
-            </p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Mathématiques</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Physique</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Certifications en ligne</h4>
-              <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm font-semibold">
-                2023 - 2024
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">FreeCodeCamp, Udemy</p>
-            <p class="text-gray-300 leading-relaxed">
-              Certifications en développement web frontend, React, et design UI/UX.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-4">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Frontend</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">React</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">UI/UX</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXPERIENCE SECTION -->
-  <section id="experience" class="relative py-32 px-6 bg-gray-900">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-          EXPÉRIENCE
-        </span>
-        <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl">
-          Mon <span class="text-gradient">parcours professionnel</span>
-        </h2>
-      </div>
-
-      <div class="space-y-6">
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Développeur Frontend</h4>
-              <span class="px-3 py-1 bg-green-900/30 text-green-400 rounded-full text-sm font-semibold">
-                2025 - Présent
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">TechStart Solutions - Dakar</p>
-            <p class="text-gray-300 leading-relaxed mb-4">
-              Développement d'applications web modernes avec React et Tailwind CSS. Collaboration avec l'équipe design.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">React</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Tailwind</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">TypeScript</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Stage Développeur Web</h4>
-              <span class="px-3 py-1 bg-blue-900/30 text-blue-400 rounded-full text-sm font-semibold">
-                2024
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">AIGLIX LAB - Dakar</p>
-            <p class="text-gray-300 leading-relaxed mb-4">
-              Création de sites web responsives pour divers clients. Intégration de maquettes Figma.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">HTML/CSS</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">JavaScript</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Figma</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-2xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-2xl p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h4 class="font-bold text-xl">Freelance Developer</h4>
-              <span class="px-3 py-1 bg-purple-900/30 text-purple-400 rounded-full text-sm font-semibold">
-                2023 - 2025
-              </span>
-            </div>
-            <p class="text-gray-400 mb-4">Projets indépendants</p>
-            <p class="text-gray-300 leading-relaxed mb-4">
-              Réalisation de sites web pour petites entreprises. Portfolio, landing pages, e-commerce.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">WordPress</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">Tailwind</span>
-              <span class="bg-blue-900/20 px-3 py-1 rounded-lg text-xs">SEO</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects" class="relative py-32 px-6 bg-black">
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-          PORTFOLIO
-        </span>
-        <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl mb-6">
-          Mes <span class="text-gradient">projets</span>
-        </h2>
-        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
-          Découvrez mes dernières réalisations
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl overflow-hidden">
-            <div class="relative overflow-hidden h-64">
-              <img src="./assets/projects/project1.jpeg" alt="E-commerce" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <span class="px-4 py-2 bg-blue-900 rounded-full text-sm font-bold shadow-lg">
-                  E-Commerce
-                </span>
-              </div>
-            </div>
-
-            <div class="p-8">
-              <h3 class="font-bold text-3xl mb-4 group-hover:text-blue-400 transition-colors">
-                Boutique en ligne
-              </h3>
-              <p class="text-gray-400 leading-relaxed mb-6 text-lg">
-                Plateforme e-commerce moderne avec système de panier, filtres de produits et paiement en ligne sécurisé.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-8">
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">React</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">Tailwind</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">Stripe</span>
-              </div>
-
-              <div class="flex gap-4">
-                <a href="#" class="flex-1 text-center px-6 py-4 bg-blue-900 hover:bg-blue-800 rounded-xl font-semibold transition-all text-lg">
-                  <i class="fas fa-eye mr-2"></i>Voir
-                </a>
-                <a href="#" class="w-14 h-14 glass border border-blue-900/30 rounded-xl flex items-center justify-center hover:bg-blue-900/10 transition-all">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl overflow-hidden">
-            <div class="relative overflow-hidden h-64">
-              <img src="./assets/projects/project2.jpg" alt="Météo App" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <span class="px-4 py-2 bg-blue-900 rounded-full text-sm font-bold shadow-lg">
-                  API App
-                </span>
-              </div>
-            </div>
-
-            <div class="p-8">
-              <h3 class="font-bold text-3xl mb-4 group-hover:text-blue-400 transition-colors">
-                Application Météo
-              </h3>
-              <p class="text-gray-400 leading-relaxed mb-6 text-lg">
-                App météo en temps réel avec prévisions sur 7 jours et alertes météorologiques.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-8">
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">JavaScript</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">API REST</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">Charts.js</span>
-              </div>
-
-              <div class="flex gap-4">
-                <a href="#" class="flex-1 text-center px-6 py-4 bg-blue-900 hover:bg-blue-800 rounded-xl font-semibold transition-all text-lg">
-                  <i class="fas fa-eye mr-2"></i>Voir
-                </a>
-                <a href="#" class="w-14 h-14 glass border border-blue-900/30 rounded-xl flex items-center justify-center hover:bg-blue-900/10 transition-all">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl overflow-hidden">
-            <div class="relative overflow-hidden h-64">
-              <img src="./assets/projects/project3.avif" alt="Gestion Bancaire" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
-              <div class="absolute top-4 right-4">
-                <span class="px-4 py-2 bg-blue-900 rounded-full text-sm font-bold shadow-lg">
-                  Banking
-                </span>
-              </div>
-            </div>
-
-            <div class="p-8">
-              <h3 class="font-bold text-3xl mb-4 group-hover:text-blue-400 transition-colors">
-                Application de Gestion Bancaire
-              </h3>
-              <p class="text-gray-400 leading-relaxed mb-6 text-lg">
-                Système de gestion bancaire avec transactions, historique et tableau de bord analytique.
-              </p>
-
-              <div class="flex flex-wrap gap-2 mb-8">
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">React</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">Node.js</span>
-                <span class="bg-blue-900/20 px-4 py-2 rounded-full text-sm">MongoDB</span>
-              </div>
-
-              <div class="flex gap-4">
-                <a href="#" class="flex-1 text-center px-6 py-4 bg-blue-900 hover:bg-blue-800 rounded-xl font-semibold transition-all text-lg">
-                  <i class="fas fa-eye mr-2"></i>Voir
-                </a>
-                <a href="#" class="w-14 h-14 glass border border-blue-900/30 rounded-xl flex items-center justify-center hover:bg-blue-900/10 transition-all">
-                  <i class="fab fa-github text-xl"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION - NO FORM -->
-  <section id="contact" class="relative py-32 px-6 bg-gray-900">
-    <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-20">
-        <span class="inline-block px-4 py-1.5 bg-blue-900/20 border border-blue-900/30 rounded-full text-blue-400 font-semibold text-sm mb-4">
-          CONTACT
-        </span>
-        <h2 class="font-bold text-5xl md:text-6xl lg:text-7xl mb-6">
-          Travaillons
-          <span class="text-gradient">ensemble</span>
-        </h2>
-        <p class="text-xl text-gray-400">
-          Une idée de projet ? N'hésitez pas à me contacter !
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <a href="/cdn-cgi/l/email-protection#1671787f7871262f262456717b777f7a3875797b" class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8 text-center">
-            <div class="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 transition-transform">
-              <i class="fas fa-envelope text-2xl"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-3">Email</h3>
-            <p class="text-gray-400 break-all"><span class="__cf_email__" data-cfemail="98fff6f1f6ffa8a1a8aad8fff5f9f1f4b6fbf7f5">gning0902@gmail.com</span></p>
-          </div>
-        </a>
-
-        <a href="tel:+221772507037" class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8 text-center">
-            <div class="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 transition-transform">
-              <i class="fas fa-phone text-2xl"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-3">Téléphone</h3>
-            <p class="text-gray-400">+221 77 250 70 37</p>
-          </div>
-        </a>
-
-        <div class="group relative hover-scale">
-          <div class="absolute inset-0 bg-blue-900 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-opacity"></div>
-          <div class="relative glass border border-blue-900/30 rounded-3xl p-8 text-center">
-            <div class="w-16 h-16 bg-blue-900 rounded-2xl flex items-center justify-center mx-auto mb-6 transform group-hover:rotate-6 transition-transform">
-              <i class="fas fa-map-marker-alt text-2xl"></i>
-            </div>
-            <h3 class="font-bold text-xl mb-3">Localisation</h3>
-            <p class="text-gray-400">Diamniadio, Dakar, Sénégal</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="relative py-16 px-6 border-t border-blue-900/30 bg-black">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid md:grid-cols-3 gap-12 mb-12">
-        <div>
-          <div class="flex items-center gap-3 mb-6">
-            <div class="w-12 h-12 bg-gradient-to-br from-blue-900 to-blue-700 rounded-full overflow-hidden border-2 border-blue-500">
-              <!-- Ajoutez votre photo ici - remplacez photo.jpg par le nom de votre fichier -->
-              <img src="photo.jpg" alt="Fadel" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-              <div class="w-full h-full flex items-center justify-center font-bold text-2xl bg-blue-900" style="display:none;">F</div>
-            </div>
-            <span class="font-bold text-2xl">Fadel<span class="text-blue-400">.</span></span>
-          </div>
-          <p class="text-gray-400 leading-relaxed">
-            Développeur Frontend passionné, créant des expériences web modernes et performantes.
+    <!-- ACCUEIL -->
+    <section class="hero">
+      <div class="wrap hero__inner">
+        <div class="hero__text">
+          <h1 class="hero__name">Mohamed Fadel Gning</h1>
+          <p class="hero__role">Développement web, support informatique et réseaux.</p>
+          <p class="hero__lead">
+            Étudiant en Génie Informatique à Dakar, je cherche un environnement professionnel
+            où mettre mes connaissances en pratique et gagner de l'expérience en support IT et en développement.
           </p>
-        </div>
 
-        <div>
-          <h4 class="font-bold text-lg mb-6">Réseaux sociaux</h4>
-          <div class="flex gap-3 mb-6">
-            <a href="#" class="w-12 h-12 glass border border-blue-900/30 rounded-2xl flex items-center justify-center hover:bg-blue-900 transition-all hover:scale-110">
-              <i class="fab fa-github text-xl"></i>
-            </a>
-            <a href="#" class="w-12 h-12 glass border border-blue-900/30 rounded-2xl flex items-center justify-center hover:bg-blue-900 transition-all hover:scale-110">
-              <i class="fab fa-linkedin text-xl"></i>
-            </a>
-            <a href="#" class="w-12 h-12 glass border border-blue-900/30 rounded-2xl flex items-center justify-center hover:bg-blue-900 transition-all hover:scale-110">
-              <i class="fab fa-twitter text-xl"></i>
-            </a>
+          <ul class="hero__facts">
+            <li>Licence 3 Développement Web/Mobile, UNCHK</li>
+            <li>Licence professionnelle 2 Génie Informatique, UNIPRO</li>
+            <li>Diamniadio, Dakar, Sénégal</li>
+          </ul>
+
+          <div class="actions">
+            <a class="btn btn--primary" href="cv.pdf" download="CV_Mohamed_Fadel_Gning.pdf">Télécharger mon CV</a>
+            <a class="btn btn--ghost" href="#projets">Voir mes projets</a>
+            <a class="btn btn--link" href="https://wa.me/221772507037" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
           </div>
-          
-          <a href="cv.pdf" download class="inline-flex items-center gap-2 px-6 py-3 bg-blue-900 hover:bg-blue-800 rounded-xl font-semibold transition-all text-sm">
-            <i class="fas fa-file-pdf"></i>
-            Télécharger mon CV
-          </a>
         </div>
+      </div>
+    </section>
 
-        <div>
-          <h4 class="font-bold text-lg mb-6">WhatsApp</h4>
-          <div class="flex flex-col items-center justify-center glass border border-blue-900/30 rounded-2xl p-4">
-            <!-- QR Code WhatsApp - Ajoutez votre image QR code -->
-            <img src="whatsapp-qr.png" alt="WhatsApp QR Code" class="w-32 h-32 rounded-lg mb-3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-            <div class="w-32 h-32 bg-blue-900/20 rounded-lg flex items-center justify-center mb-3" style="display:none;">
-              <i class="fab fa-whatsapp text-5xl text-blue-400"></i>
+    <!-- PROJETS -->
+    <section class="section" id="projets" aria-labelledby="projets-titre">
+      <div class="wrap section__grid section__grid--stack">
+        <h2 class="section__title" id="projets-titre">Projets</h2>
+
+        <div class="section__body">
+
+          <!-- Solu Buur -->
+          <article class="project">
+            <div class="project__text">
+              <h3 class="project__title">Solu Buur</h3>
+              <p class="project__summary">
+                Site vitrine d'une marque de tenues traditionnelles modernes : collections de saison
+                (Tabaski, Korité), costumes africains et ensembles trois pièces, avec commande par WhatsApp.
+              </p>
+              <dl class="facts">
+                <div><dt>Réalisation</dt><dd>Conception et développement du site, pages d'accueil et « À propos », présentation de six collections, commande via WhatsApp</dd></div>
+                <div><dt>Technologies</dt><dd>HTML, CSS, JavaScript</dd></div>
+              </dl>
+              <a class="btn btn--ghost" href="https://www.solubuur.com" target="_blank" rel="noopener">Voir le site</a>
             </div>
-            <p class="text-sm text-gray-400 text-center">Scannez pour discuter sur WhatsApp</p>
-            <a href="https://wa.me/221772507037" target="_blank" class="mt-3 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-semibold transition-all flex items-center gap-2">
-              <i class="fab fa-whatsapp"></i>
-              Ouvrir WhatsApp
-            </a>
-          </div>
+            <div class="project__media triptych">
+              <img src="assets/projects/solubuur-1.jpg" width="640" height="800" loading="lazy" alt="Tenue blanche de la collection Tabaski 2026 de Solu Buur">
+              <img src="assets/projects/solubuur-2.jpg" width="640" height="800" loading="lazy" alt="Ensemble bleu et beige de la collection Korité 2026">
+              <img src="assets/projects/solubuur-3.jpg" width="640" height="800" loading="lazy" alt="Tenue beige de la collection Président Diomaye">
+            </div>
+          </article>
+
+          <!-- DigiSchool -->
+          <article class="project">
+            <div class="project__text">
+              <h3 class="project__title">DigiSchool</h3>
+              <p class="project__summary">
+                Plateforme de gestion scolaire en français, avec des espaces séparés pour l'administration,
+                les enseignants et les élèves : classes, notes, paiements et emplois du temps.
+              </p>
+              <dl class="facts">
+                <div><dt>Rôle</dt><dd>Responsable du développement d'une équipe de neuf étudiants</dd></div>
+                <div><dt>Réalisation</dt><dd>Maquettes Figma, intégration complète de l'API, interfaces adaptées au mobile, organisation du travail sur GitHub, démo en ligne</dd></div>
+                <div><dt>Technologies</dt><dd>React, Vite, Tailwind CSS, Node.js, Express, MySQL, Vercel, Railway</dd></div>
+              </dl>
+              <a class="btn btn--ghost" href="https://sunu-school.vercel.app/" target="_blank" rel="noopener">Voir la démo</a>
+            </div>
+
+            <div class="project__media">
+              <figure class="mock">
+                <div class="mock__window" aria-hidden="true">
+                  <div class="mock__bar"><span></span><span></span><span></span></div>
+                  <div class="mock__app">
+                    <ul class="mock__side">
+                      <li class="is-on">Tableau de bord</li>
+                      <li>Classes</li>
+                      <li>Notes</li>
+                      <li>Paiements</li>
+                      <li>Emplois du temps</li>
+                      <li>Enseignants</li>
+                    </ul>
+                    <div class="mock__main">
+                      <div class="mock__stats">
+                        <div><b>Élèves</b><i></i></div>
+                        <div><b>Classes</b><i></i></div>
+                        <div><b>Paiements</b><i></i></div>
+                      </div>
+                      <div class="mock__chart">
+                        <span style="--h:46%"></span><span style="--h:62%"></span><span style="--h:38%"></span>
+                        <span style="--h:74%"></span><span style="--h:58%"></span><span style="--h:88%"></span>
+                        <span style="--h:66%"></span>
+                      </div>
+                      <div class="mock__rows"><span></span><span></span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+                <figcaption>Aperçu schématique de l'interface</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <!-- Karang Couture -->
+          <article class="project">
+            <div class="project__text">
+              <h3 class="project__title">Karang Couture</h3>
+              <p class="project__summary">
+                Site d'une boutique de tenues traditionnelles africaines pour homme et femme,
+                avec sacs, lunettes, montres et chaussures, et un espace d'administration pour gérer les articles.
+              </p>
+              <dl class="facts">
+                <div><dt>Réalisation</dt><dd>Site vitrine par catégories, connexion sécurisée, tableau de bord et gestion des articles par le propriétaire</dd></div>
+                <div><dt>Technologies</dt><dd>HTML, CSS, JavaScript, PHP (PDO), MySQL</dd></div>
+              </dl>
+              <a class="btn btn--ghost" href="https://www.karangcouture.com" target="_blank" rel="noopener">Voir le site</a>
+            </div>
+            <div class="project__media triptych">
+              <img src="assets/projects/karang-1.jpg" width="640" height="800" loading="lazy" alt="Façade de la boutique Karang Couture">
+              <img src="assets/projects/karang-2.jpg" width="640" height="800" loading="lazy" alt="Robe de soirée bleue présentée sur le site Karang Couture">
+              <img src="assets/projects/karang-3.jpg" width="640" height="800" loading="lazy" alt="Sac à main rose de la catégorie accessoires">
+            </div>
+          </article>
+
         </div>
       </div>
+    </section>
 
-      <div class="pt-8 border-t border-blue-900/30 text-center">
-        <p class="text-gray-400">
-          © 2026 Fadel. Tous droits réservés. Fait avec 
-          <span class="text-red-500">❤</span> et 
-          <span class="text-gradient font-semibold">Tailwind CSS</span>
-        </p>
+    <!-- PARCOURS -->
+    <section class="section section--tint" id="parcours" aria-labelledby="parcours-titre">
+      <div class="wrap section__grid">
+        <h2 class="section__title" id="parcours-titre">Parcours</h2>
+
+        <div class="section__body">
+          <h3 class="group-title">Expérience</h3>
+          <ul class="timeline">
+            <li>
+              <p class="timeline__date">Février – mars 2026</p>
+              <div>
+                <h4>AIGLIX LAB, stagiaire</h4>
+                <p>Participation au développement frontend d'une plateforme immobilière.</p>
+              </div>
+            </li>
+            <li>
+              <p class="timeline__date">Avril – mai 2025</p>
+              <div>
+                <h4>TGI GROUPE, stagiaire</h4>
+                <p>Maintenance informatique et systèmes réseaux au service de l'entreprise.</p>
+              </div>
+            </li>
+          </ul>
+
+          <h3 class="group-title">Formation</h3>
+          <ul class="timeline">
+            <li>
+              <p class="timeline__date">2024 – 2026</p>
+              <div>
+                <h4>Univers Professionnel (UNIPRO)</h4>
+                <p>Licence professionnelle 1 puis 2 en Génie Informatique.</p>
+              </div>
+            </li>
+            <li>
+              <p class="timeline__date">2023 – 2026</p>
+              <div>
+                <h4>Université Numérique Cheikh Hamidou Kane (UNCHK)</h4>
+                <p>Licence universitaire en Développement Web/Mobile, actuellement en troisième année.</p>
+              </div>
+            </li>
+            <li>
+              <p class="timeline__date">2023</p>
+              <div>
+                <h4>FORCE-N</h4>
+                <p>Certification en marketing digital.</p>
+              </div>
+            </li>
+            <li>
+              <p class="timeline__date">2021 – 2022</p>
+              <div>
+                <h4>Lycée Ousmane Sow de Diamniadio</h4>
+                <p>Baccalauréat L2.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section class="section" id="competences" aria-labelledby="competences-titre">
+      <div class="wrap section__grid">
+        <h2 class="section__title" id="competences-titre">Compétences</h2>
+
+        <dl class="skills section__body">
+          <div>
+            <dt>Support informatique</dt>
+            <dd>Diagnostic et résolution de problèmes techniques, assistance aux utilisateurs</dd>
+          </div>
+          <div>
+            <dt>Réseaux</dt>
+            <dd>Configuration de base, adressage IP, connexion et dépannage réseau</dd>
+          </div>
+          <div>
+            <dt>Développement web</dt>
+            <dd>HTML, CSS, JavaScript, TypeScript, React, Node.js et Express, PHP</dd>
+          </div>
+          <div>
+            <dt>Bases de données</dt>
+            <dd>MySQL</dd>
+          </div>
+          <div>
+            <dt>Systèmes et outils</dt>
+            <dd>Environnement Linux, Git et GitHub</dd>
+          </div>
+          <div>
+            <dt>Bureautique</dt>
+            <dd>Word (avancé), Excel et PowerPoint (intermédiaire)</dd>
+          </div>
+          <div>
+            <dt>Langues</dt>
+            <dd>Français courant, anglais et espagnol intermédiaires</dd>
+          </div>
+          <div>
+            <dt>Qualités</dt>
+            <dd>Curiosité, autonomie, capacité d'apprentissage, esprit d'analyse et résolution de problèmes</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section section--dark" id="contact" aria-labelledby="contact-titre">
+      <div class="wrap section__grid">
+        <h2 class="section__title" id="contact-titre">Contact</h2>
+
+        <div class="section__body contact">
+          <p class="contact__lead">Un stage, une mission ou un projet web ? Écrivez-moi.</p>
+          <a class="contact__mail" href="mailto:gning0902@gmail.com">gning0902@gmail.com</a>
+
+          <ul class="contact__list">
+            <li><span>Téléphone</span> <a href="tel:+221772507037">+221 77 250 70 37</a></li>
+            <li><span>WhatsApp</span> <a href="https://wa.me/221772507037" target="_blank" rel="noopener">Ouvrir la conversation</a></li>
+            <li><span>Adresse</span> Diamniadio, Dakar, Sénégal</li>
+            <li><span>CV</span> <a href="cv.pdf" download="CV_Mohamed_Fadel_Gning.pdf">Télécharger en PDF</a></li>
+          </ul>
+
+          <figure class="contact__qr">
+            <img src="assets/img/whatsapp-qr.png" width="300" height="300" loading="lazy" alt="Code QR pour discuter sur WhatsApp">
+            <figcaption>Scannez pour discuter sur WhatsApp</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Mohamed Fadel Gning</p>
     </div>
   </footer>
-
-  <!-- Scroll to Top -->
-  <button id="scroll-top" class="fixed bottom-8 right-8 w-14 h-14 bg-blue-900 hover:bg-blue-800 rounded-2xl flex items-center justify-center shadow-2xl shadow-blue-900/30 opacity-0 transition-all z-50 hover:scale-110">
-    <i class="fas fa-arrow-up text-xl"></i>
-  </button>
-
-  
+</body>
+</html>
